@@ -4,9 +4,9 @@ def get_multiplied_digits(number): # Напишите функцию get_multipl
 
     if len(str_number) > 1: # 4 пункт можно выполнить только тогда, когда длина str_number больше 1, т.к. в противном случае не
         return first * get_multiplied_digits(int(str_number[1:])) # Возвращайте значение first * get_multiplied_digits(int(str_number[1:])). Таким образом вы умножите первую цифру числа на результат работы этой же функции с числом, но уже без первой цифры.
-    else: # Если же длина str_number не больше 1, тогда вернуть оставшуюся цифру first.
+    if first != 0: # Если же длина str_number не больше 1, тогда вернуть оставшуюся цифру first.
         return first
 
 
-result=get_multiplied_digits(40203) # Исходный код
+result = get_multiplied_digits(40203) # Исходный код
 print(result)
